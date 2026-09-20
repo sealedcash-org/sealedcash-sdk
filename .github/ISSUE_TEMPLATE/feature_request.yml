@@ -1,0 +1,28 @@
+name: Feature request
+description: Suggest an improvement to the SDK.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed API or behavior
+      description: Describe a backwards-compatible approach where possible.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety checklist
+      options:
+        - label: This proposal does not require the SDK to hold private keys.
+          required: true
+        - label: I have not included credentials or production deployment values.
+          required: true

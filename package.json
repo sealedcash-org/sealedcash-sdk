@@ -1,0 +1,43 @@
+{
+  "name": "@sealedcash/sdk",
+  "version": "0.1.0",
+  "description": "A typed, fetch-based client for the SealedCash wallet-owned privacy API.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sealedcash-org/sealedcash-sdk.git"
+  },
+  "homepage": "https://github.com/sealedcash-org/sealedcash-sdk",
+  "bugs": {
+    "url": "https://github.com/sealedcash-org/sealedcash-sdk/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/**/*.test.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.21",
+    "typescript": "5.8.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
